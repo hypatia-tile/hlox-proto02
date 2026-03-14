@@ -1,8 +1,10 @@
-module LoxCli (main) where
+module Main (main) where
 
+import System.Environment (getArgs)
 import qualified MyLib (someFunc)
 
 main :: IO ()
 main = do
   putStrLn "Hello, Haskell!"
-  MyLib.someFunc
+  args <- getArgs
+  MyLib.someFunc args
