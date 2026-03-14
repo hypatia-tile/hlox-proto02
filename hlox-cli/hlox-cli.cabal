@@ -104,7 +104,7 @@ test-suite hlox-cli-test
     import:           warnings
 
     -- Base language which the package is written in.
-    default-language: Haskell2021
+    default-language: GHC2021
 
     -- Modules included in this executable, other than Main.
     -- other-modules:
