@@ -2,7 +2,7 @@ module MyLib (someFunc) where
 
 import Data.Lox.Token
 import Lox.Repl
-import Text.Read (readMaybe)
+import Lox.ReadFile
 
 someFunc :: [String] -> IO ()
 someFunc procType = dispatch procType lexer
@@ -17,4 +17,5 @@ dispatch procType = case task procType of
 
 task :: [String] -> Maybe (Lexer -> IO ())
 task ["repl"] = Just dispatchRepl
-task ("file" : x) = undefined
+task ["file" , x] = Just $ dispatchFile x
+task _ = Nothing
