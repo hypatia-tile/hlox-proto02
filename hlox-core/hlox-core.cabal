@@ -18,7 +18,9 @@ library
       Data.Lox.Token,
       Data.Lox.Lexer,
       Lox.Lexer
-    build-depends:    base ^>=4.20.2.0
+    build-depends:
+      base ^>=4.20.2.0,
+      mtl
     hs-source-dirs:   src
     default-language: GHC2021
 

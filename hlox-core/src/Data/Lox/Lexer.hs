@@ -20,3 +20,11 @@ newtype Lexer = Lexer
 -- source and make the error report
 newtype Located a = Located (a, Position)
 
+instance Show a => Show (Located a) where
+  show (Located (tok, Position l n))
+    = "("
+    <> show l
+    <> ", "
+    <> show n
+    <> ") "
+    <> show tok
