@@ -17,7 +17,8 @@ library
       MyLib,
       Data.Lox.Token,
       Data.Lox.Lexer,
-      Lox.Lexer
+      Lox.Lexer,
+      Lox.Lexer.Operator
     build-depends:
       base ^>=4.20.2.0,
       mtl
