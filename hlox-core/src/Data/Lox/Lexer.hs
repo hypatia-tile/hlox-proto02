@@ -9,6 +9,7 @@ data Position = Position
   { line :: Int,
     column :: Int
   }
+  deriving (Eq)
 
 -- | Lexer type
 newtype Lexer = Lexer
@@ -18,7 +19,7 @@ newtype Lexer = Lexer
 -- Before we write lexer, we need to associate the source string
 -- with the position by which we can locate the character from
 -- source and make the error report
-newtype Located a = Located (a, Position)
+newtype Located a = Located (a, Position) deriving (Eq)
 
 instance Show a => Show (Located a) where
   show (Located (tok, Position l n))

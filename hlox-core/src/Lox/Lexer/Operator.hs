@@ -54,13 +54,3 @@ parseOperator = do
           return $ Located (tok, pos)
         _ -> fail "No match operator"
 
--- TODO: write test
-test :: IO ()
-test = do
-  let f = flip (evalState . enumString) (Position 1 1)
-  let g = print . runStateT parseOperator . f
-  g "hello"
-  g "="
-  g ">"
-  g ">=hello"
-  g ">==hello"
