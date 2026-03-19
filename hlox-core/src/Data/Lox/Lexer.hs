@@ -15,10 +15,10 @@ data Position = Position
 newtype Lexer = Lexer
   {runLexer :: String -> [(Token, Position)]}
 
--- We will define lexer.
--- Before we write lexer, we need to associate the source string
--- with the position by which we can locate the character from
--- source and make the error report
+-- Define lexer.
+-- Before write lexer, need to associate the source string
+-- with the position by which they can be located from
+-- source and reported in error messages.
 newtype Located a = Located (a, Position) deriving (Eq)
 
 instance Show a => Show (Located a) where
