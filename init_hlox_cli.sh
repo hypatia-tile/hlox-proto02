@@ -8,4 +8,4 @@ cabal init --non-interactive \
   --libandexe \
   --tests \
   --main-is=LoxCli.hs \
-  --language=Haskell2021
+  --language=GHC2021

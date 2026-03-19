@@ -8,4 +8,4 @@ cabal init --non-interactive \
   --lib \
   --tests \
   --main-is=LoxCore.hs \
-  --language=Haskell2021
+  --language=GHC2021
