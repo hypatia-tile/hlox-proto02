@@ -51,7 +51,7 @@ coordinates predicate (x:xs) = helper (coordinate x) predicate xs
     helper :: Located a -> (a -> Bool) -> [a] -> [Located a]
     helper px _ [] = [px]
     helper px isNewLine (y:ys) = let py = nextCoord isNewLine px y
-                                  in px : py : helper py isNewLine ys
+                                  in px : helper py isNewLine ys
 
 instance Functor Located where
   fmap f (Located pos x) = Located pos (f x)
@@ -65,9 +65,9 @@ instance Monad Located where
   Located pos x >>= f = let Located _ y = f x in Located pos y
 
 instance Show a => Show (Located a) where
-  show (Located (Position l n) tok)
+  show (Located (Position r n) tok)
     = "("
-    <> show l
+    <> show r
     <> ", "
     <> show n
     <> ") "
